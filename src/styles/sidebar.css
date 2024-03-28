@@ -1,0 +1,62 @@
+.sidebar {
+    position: fixed;
+    z-index: 100;
+    top: 40%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.sidebar .sidebar-nav {
+    padding: 15px;
+    background-color: rgb(99, 21, 21);
+    color: white;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar > div:last-child {
+    border: none;
+    border-bottom-right-radius: 10px;
+}
+
+.sidebar > div:first-child {
+    border-top-right-radius: 10px;   
+}
+
+.sidebar .sidebar-nav > svg {
+    background-color: transparent;
+    font-size: 1.1rem;
+}
+
+.sidebar .active {
+    background-color: rgb(163, 29, 29);
+}
+
+@media screen and (max-width: 800px) {
+    .sidebar {
+        top: auto;
+        bottom: 0;
+        width: 100vw;
+        height: auto;
+        flex-direction: row;
+    }
+
+    .sidebar .sidebar-nav {
+        border-radius: 0;
+        border-bottom: none;
+        border-right: 1px solid white;
+        flex: 1;
+    }
+
+    .sidebar > div:last-child {
+        border-bottom-right-radius: 0;
+    }
+
+    .sidebar > div:first-child {
+        border-top-right-radius: 0;
+    }
+}

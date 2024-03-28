@@ -1,0 +1,127 @@
+.topComponent {
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 500px rgba(0, 0, 0, 0.5);
+  height: 42vh;
+  width: 100vw;
+  background-image: url('../assets/bg3.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  font-family: 'Brawler', serif;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.profileImage {
+  width: 20%;
+  background: transparent;
+  margin-left: 50px;
+  filter: drop-shadow(0px 0px 6px rgba(225, 225, 225, 0.5));
+}
+
+.topComponent>div {
+  position: relative;
+  left: 35%;
+}
+
+.topComponent>div,
+.topComponent>div>p {
+  color: #cdccf5;
+  background-color: transparent;
+  width: 30vw;
+  font-size: 2rem;
+}
+
+.topComponent>div>p {
+  font-size: 1.6rem;
+}
+
+.topComponent .Mname {
+  font-size: 3.5rem;
+}
+
+.highlight {
+  color: #e0cd00;
+  font-size: 6.5rem;
+}
+
+.topComponent .typewriter {
+  font-size: 1.7rem;
+  color: #dfe7fd;
+}
+
+@media screen and (max-width: 1500px) {
+  .topComponent {
+    flex-direction: column;
+    height: 100svh;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .topComponent>div {
+    position: static;
+    left: auto;
+  }
+
+  .profileImage {
+    margin: 0;
+    width: 13rem;
+    margin: 0 0 20px 0;
+  }
+
+  .topComponent>div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topComponent .Mname {
+    width: auto;
+    font-size: 3.7rem;
+    justify-content: center;
+  }
+
+  .highlight {
+    font-size: 5.5rem;
+  }
+
+  .topComponent>div>p {
+    font-size: 1.5rem;
+  }
+
+  .topComponent .typewriter {
+    font-size: 1.6rem;
+    width: auto;
+    color: #dfe7fd;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .profileImage {
+    width: 10rem;
+  }
+
+  .topComponent .Mname {
+    font-size: 1.7rem;
+  }
+
+  .highlight {
+    font-size: 3.5rem;
+  }
+
+  .topComponent>div>p {
+    font-size: 1rem;
+  }
+
+  .topComponent .typewriter {
+    font-size: 1rem;
+  }
+}

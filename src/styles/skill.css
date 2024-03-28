@@ -1,0 +1,83 @@
+.skillsComponent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.programming,
+.dsa,
+.frontend,
+.backend,
+.database,
+.versionControl {
+    width: 45%;
+    margin: 10px;   
+    padding: 15px;
+    border: 1px solid #cccccc7a;
+    border-radius: 8px;
+    transition: all ease-in-out 0.3s;
+}
+
+.programming:hover,
+.dsa:hover,
+.frontend:hover,
+.backend:hover,
+.database:hover,
+.versionControl:hover {
+    background-color: #1c211c;
+    transform: scale(1.05);
+}
+
+.skillsComponent>div>h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    background: transparent;
+}
+
+.skillsComponent>div>ul {
+    list-style: none;
+    padding: 0;
+    background: transparent;
+}
+
+.skillsComponent>div>ul>li {
+    display: inline-block;
+    margin: 10px;
+    background: transparent;
+}
+
+.skillsComponent>div>ul>li>svg {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+}
+
+@media screen and (max-width: 800px) {
+
+    .skillsComponent {
+        padding: 10px;
+    }
+
+    .programming,
+    .dsa,
+    .frontend,
+    .backend,
+    .database,
+    .versionControl {
+        width: 90%;
+        margin: 10px;
+    }
+
+    .skillsComponent>div>h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        background: transparent;
+    }
+
+    .skillsComponent>div>ul>li>svg {
+        width: 40px;
+        height: 40px;
+    }
+
+}

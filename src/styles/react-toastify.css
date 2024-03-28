@@ -1,0 +1,21 @@
+.Toastify__toast-theme--light {
+    background: #131F22;
+    color: white;
+}
+
+.Toastify__toast-container--top-right {
+    background: transparent;
+}
+
+.Toastify__toast-body {
+    background: #131F22;
+}
+
+.Toastify__toast-body>div,
+svg {
+    background: transparent;
+}
+
+.Toastify__close-button > svg {
+    color: white;
+}

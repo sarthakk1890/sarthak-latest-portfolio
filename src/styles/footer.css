@@ -1,0 +1,163 @@
+.footer_main,
+.footer_sub-01,
+.social-icons ul,
+.contact-details,
+.footer_sub-02 {
+    display: flex;
+    justify-content: space-around;
+    background: #131F22;
+}
+
+.footer_main {
+    padding: 80px 50px 0;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.footer_main div,
+.footer_main p,
+.footer_main h2,
+.footer_main li,
+.contact-details span {
+    background: #131F22;
+}
+
+.footer_main svg {
+    background: transparent;
+}
+
+.footer_sub-01 {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 20px;
+}
+
+.footer_sub-01 h2 {
+    font-size: 50px;
+    line-height: 60px;
+    font-family: Playfair Display;
+    font-weight: 900;
+    color: white;
+    overflow: hidden;
+}
+
+.social-icons ul {
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.social-icons li svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icons li {
+    background-color: #fee5b5;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.contact-details {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.contact-details span {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: "Roboto Slab", serif;
+}
+
+.contact-details span svg {
+    color: #fee5b5;
+}
+
+.contact-details span p {
+    border-bottom: 1px solid #fee4b549;
+    font-size: 0.9rem;
+}
+
+.footer_sub-02 {
+    gap: 50px;
+    padding: 0px 20px 20px;
+    flex-wrap: wrap;
+}
+
+div.coding-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #17262B;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-shadow: 20px 20px 0px 0px rgba(254, 229, 181, 0.08);
+    border-radius: 20px 0px 20px 0px;
+    margin-bottom: 60px;
+    text-align: center;
+    width: 20vw;
+    min-width: 200px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+div.coding-profile svg {
+    width: 35px;
+    height: 35px;
+    color: #fee5b5;
+}
+
+div.coding-profile p {
+    background-color: #17262B;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 928px) {
+
+    .footer_sub-01 h2 {
+        text-align: center;
+    }
+
+    .footer_main {
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .footer_sub-01 {
+        align-items: center;
+    }
+
+    .contact-details{
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 590px) {
+
+    .footer_main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .footer_sub-02{
+        gap: 20px;
+    }
+
+    div.coding-profile {
+        width: 70vw;
+    }
+}
