@@ -53,12 +53,12 @@ const Contact = () => {
                 },
             }
         )
-            .then((res) => {
+            .then(() => {
                 setName('');
                 setEmail('');
                 setMessage('');
             })
-            .catch((error) => { })
+            .catch(() => { })
     }
 
     return (
