@@ -16,7 +16,7 @@ import './styles/react-toastify.css'
 
 const projectData = [
   { image: img1, title: 'BookCafe', description: 'A robust web application for renting books', url: 'https://boookcafe.netlify.app/' },
-  { image: img3, title: 'Portfolio', description: 'Want to know about me visit my Portfolio', url: 'https://sarthak1890.netlify.app/' },
+  { image: img3, title: 'Portfolio', description: 'Want to know about me visit my Portfolio', url: 'https://sarthak-portfolio-gray.vercel.app/' },
   { image: img2, title: 'RetinoCare', description: 'A diabetic retinopathy detection web app', url: 'https://retinocare.netlify.app/' },
 ];
 
