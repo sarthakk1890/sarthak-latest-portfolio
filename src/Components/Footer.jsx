@@ -30,8 +30,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="contact-details">
-                        <span className="email"><FaPhone /> <p>+91 7017359581</p></span>
-                        <span className="phone"><FaEnvelope /> <p>144singhsarthak@gmail.com</p></span>
+                        <span className="email contact-details-sub"><FaPhone /> <p>+91 7017359581</p></span>
+                        <span className="phone contact-details-sub"><FaEnvelope /> <p>144singhsarthak@gmail.com</p></span>
                     </div>
                 </div>
 

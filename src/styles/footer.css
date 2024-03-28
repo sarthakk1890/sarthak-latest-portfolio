@@ -2,7 +2,8 @@
 .footer_sub-01,
 .social-icons ul,
 .contact-details,
-.footer_sub-02 {
+.footer_sub-02,
+.contact-details span {
     display: flex;
     justify-content: space-around;
     background: #131F22;
@@ -17,8 +18,7 @@
 .footer_main div,
 .footer_main p,
 .footer_main h2,
-.footer_main li,
-.contact-details span {
+.footer_main li {
     background: #131F22;
 }
 
@@ -67,7 +67,7 @@
 .contact-details {
     flex-direction: column;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
     gap: 5px;
 }
 
