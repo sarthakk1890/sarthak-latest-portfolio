@@ -13,9 +13,9 @@ const Contact = () => {
     const handleSubmitForm = (e) => {
         e.preventDefault();
 
-        const serviceId = "service_i1if78n";
-        const templateId = "template_2lvwcbh";
-        const publicKey = "NZTolXnICO8Ac0Luv";
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
         if (!name || !email || !message) {
             toast.warning("Please complete the message !");
