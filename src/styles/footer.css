@@ -2,8 +2,7 @@
 .footer_sub-01,
 .social-icons ul,
 .contact-details,
-.footer_sub-02,
-.contact-details span {
+.footer_sub-02 {
     display: flex;
     justify-content: space-around;
     background: #131F22;
@@ -18,7 +17,8 @@
 .footer_main div,
 .footer_main p,
 .footer_main h2,
-.footer_main li {
+.footer_main li,
+.contact-details span {
     background: #131F22;
 }
 
@@ -68,7 +68,7 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 30px;
-    gap: 5px;
+    gap: 10px;
 }
 
 .contact-details span {
@@ -141,7 +141,7 @@ div.coding-profile p {
         align-items: center;
     }
 
-    .contact-details{
+    .contact-details {
         align-items: center;
     }
 }
@@ -153,7 +153,7 @@ div.coding-profile p {
         padding-right: 0;
     }
 
-    .footer_sub-02{
+    .footer_sub-02 {
         gap: 20px;
     }
 
