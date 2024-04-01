@@ -20,7 +20,13 @@
       pointer-events: none;
       background-color: transparent;
       z-index: 999;
-      transition: border-color 0.3s ease; /* Smooth transition effect */
+      transition: border-color 0.3s ease;
+    }
+
+    @media (hover:none) and (pointer: coarse) {
+      .circle {
+        display: none;
+      }
     }
   </style>
 
