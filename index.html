@@ -9,17 +9,18 @@
 
   <style>
     .circle {
-      --circle-size: 40px;
+      --circle-size: 50px;
       position: fixed;
       height: var(--circle-size);
       width: var(--circle-size);
-      border: 1px solid white;
+      border: 2px solid white;
       border-radius: 100%;
       top: calc(var(--circle-size) / 2 * -1);
       left: calc(var(--circle-size) / 2 * -1);
       pointer-events: none;
       background-color: transparent;
       z-index: 999;
+      transition: border-color 0.3s ease; /* Smooth transition effect */
     }
   </style>
 
@@ -40,47 +41,40 @@
     let currentScale = 0;
     let currentAngle = 0;
 
-    let isTouchActive = false; // Flag to track touch activity
-
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.x;
       mouse.y = e.y;
     });
 
-    window.addEventListener('touchstart', () => {
-      isTouchActive = true; // Touch is active when touchstart event occurs
-    });
-
-    window.addEventListener('touchend', () => {
-      isTouchActive = false; // Touch is not active when touchend event occurs
-    });
-
     const speed = 0.17;
 
     const tick = () => {
-      if (!isTouchActive) {
-        circle.x += (mouse.x - circle.x) * speed;
-        circle.y += (mouse.y - circle.y) * speed;
-        const translateTransform = `translate(${circle.x}px, ${circle.y}px)`;
+      circle.x += (mouse.x - circle.x) * speed;
+      circle.y += (mouse.y - circle.y) * speed;
+      const translateTransform = `translate(${circle.x}px, ${circle.y}px)`;
 
-        const deltaMouseX = mouse.x - previousMouse.x;
-        const deltaMouseY = mouse.y - previousMouse.y;
-        previousMouse.x = mouse.x;
-        previousMouse.y = mouse.y;
-        const mouseVelocity = Math.min(Math.sqrt(deltaMouseX ** 2 + deltaMouseY ** 2) * 4, 150);
-        const scaleValue = (mouseVelocity / 150) * 0.5;
-        currentScale += (scaleValue - currentScale) * speed;
-        const scaleTransform = `scale(${1 + currentScale}, ${1 - currentScale})`;
+      const deltaMouseX = mouse.x - previousMouse.x;
+      const deltaMouseY = mouse.y - previousMouse.y;
+      previousMouse.x = mouse.x;
+      previousMouse.y = mouse.y;
+      const mouseVelocity = Math.min(Math.sqrt(deltaMouseX ** 2 + deltaMouseY ** 2) * 4, 150);
+      const scaleValue = (mouseVelocity / 150) * 0.5;
+      currentScale += (scaleValue - currentScale) * speed;
+      const scaleTransform = `scale(${1 + currentScale}, ${1 - currentScale})`;
 
-        const angle = Math.atan2(deltaMouseY, deltaMouseX) * 180 / Math.PI;
-        if (mouseVelocity > 20) {
-          currentAngle = angle;
-        }
-        const rotateTransform = `rotate(${currentAngle}deg)`;
+      const angle = Math.atan2(deltaMouseY, deltaMouseX) * 180 / Math.PI;
+      if (mouseVelocity > 20) {
+        currentAngle = angle;
+      }
+      const rotateTransform = `rotate(${currentAngle}deg)`;
 
-        circleElement.style.transform = `${translateTransform} ${rotateTransform} ${scaleTransform}`;
+      circleElement.style.transform = `${translateTransform} ${rotateTransform} ${scaleTransform}`;
+
+      const hoveredElement = document.elementFromPoint(mouse.x, mouse.y);
+      if (hoveredElement && hoveredElement.classList.contains('project-image')) {
+        circleElement.style.borderColor = 'black';
       } else {
-        circleElement.style.transform = 'none'; // Reset transform if touch is active
+        circleElement.style.borderColor = 'white';
       }
 
       window.requestAnimationFrame(tick);
