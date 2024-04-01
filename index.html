@@ -1,13 +1,93 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/s.jpeg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sarthak's Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/s.jpeg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarthak's Portfolio</title>
+
+  <style>
+    .circle {
+      --circle-size: 40px;
+      position: fixed;
+      height: var(--circle-size);
+      width: var(--circle-size);
+      border: 1px solid white;
+      border-radius: 100%;
+      top: calc(var(--circle-size) / 2 * -1);
+      left: calc(var(--circle-size) / 2 * -1);
+      pointer-events: none;
+      background-color: transparent;
+      z-index: 999;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="circle"></div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    console.clear();
+    const circleElement = document.querySelector('.circle');
+
+    const mouse = { x: 0, y: 0 };
+    const previousMouse = { x: 0, y: 0 }
+    const circle = { x: 0, y: 0 };
+
+    let currentScale = 0;
+    let currentAngle = 0;
+
+    let isTouchActive = false; // Flag to track touch activity
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.x;
+      mouse.y = e.y;
+    });
+
+    window.addEventListener('touchstart', () => {
+      isTouchActive = true; // Touch is active when touchstart event occurs
+    });
+
+    window.addEventListener('touchend', () => {
+      isTouchActive = false; // Touch is not active when touchend event occurs
+    });
+
+    const speed = 0.17;
+
+    const tick = () => {
+      if (!isTouchActive) {
+        circle.x += (mouse.x - circle.x) * speed;
+        circle.y += (mouse.y - circle.y) * speed;
+        const translateTransform = `translate(${circle.x}px, ${circle.y}px)`;
+
+        const deltaMouseX = mouse.x - previousMouse.x;
+        const deltaMouseY = mouse.y - previousMouse.y;
+        previousMouse.x = mouse.x;
+        previousMouse.y = mouse.y;
+        const mouseVelocity = Math.min(Math.sqrt(deltaMouseX ** 2 + deltaMouseY ** 2) * 4, 150);
+        const scaleValue = (mouseVelocity / 150) * 0.5;
+        currentScale += (scaleValue - currentScale) * speed;
+        const scaleTransform = `scale(${1 + currentScale}, ${1 - currentScale})`;
+
+        const angle = Math.atan2(deltaMouseY, deltaMouseX) * 180 / Math.PI;
+        if (mouseVelocity > 20) {
+          currentAngle = angle;
+        }
+        const rotateTransform = `rotate(${currentAngle}deg)`;
+
+        circleElement.style.transform = `${translateTransform} ${rotateTransform} ${scaleTransform}`;
+      } else {
+        circleElement.style.transform = 'none'; // Reset transform if touch is active
+      }
+
+      window.requestAnimationFrame(tick);
+    }
+
+    tick();
+  </script>
+</body>
+
 </html>
