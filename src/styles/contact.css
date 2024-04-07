@@ -31,6 +31,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 2;
+    overflow: hidden;
 }
 
 .contact-main>.contact-form>p>input {

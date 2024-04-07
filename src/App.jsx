@@ -13,6 +13,7 @@ import { motion } from 'framer-motion'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/react-toastify.css'
+import BotpressChat from './Components/BotpressChat';
 
 const projectData = [
   { image: img1, title: 'BookCafe', description: 'A robust web application for renting books', url: 'https://boookcafe.netlify.app/' },
@@ -61,6 +62,7 @@ function App() {
     <>
       {/* <Sidebar /> */}
       <ToastContainer className="react-toastify" />
+      <BotpressChat />
       <TopComponent />
       <div className="main-project-block center">
         <h1 className='subHeading'>My Projects</h1>
